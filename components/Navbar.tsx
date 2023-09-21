@@ -14,7 +14,7 @@ const Navbar = () => {
           href={"/"}
         >
             <Image
-              src={"/json-logo.svg"}
+              src={"/jsm-logo.svg"}
               alt="logo"
               width={55}
               height={40}
