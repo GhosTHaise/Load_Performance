@@ -45,7 +45,8 @@ const Navbar = () => {
           >
             <Link 
               href={"https://jsmastery.pro/masteryclass"}
-              target='_blank'  
+              target='_blank' 
+              className='text-white-800'
             >
                 Masterclass
             </Link>
