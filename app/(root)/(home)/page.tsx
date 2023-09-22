@@ -1,3 +1,4 @@
+import SearchForm from "@/components/form/SearchForm"
 import { Button } from "@/components/ui/button"
 
 export default function Home() {
@@ -18,7 +19,9 @@ export default function Home() {
              JavaScript Mastery Resources
           </h1>
         </div>
+        <SearchForm />
       </section>
+      Filters
     </main>
   )
 }
