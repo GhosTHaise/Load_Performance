@@ -1,4 +1,5 @@
 import SearchForm from "@/components/form/SearchForm"
+import Filters from "@/components/shared/Filters"
 import { Button } from "@/components/ui/button"
 
 export default function Home() {
@@ -21,7 +22,8 @@ export default function Home() {
         </div>
         <SearchForm />
       </section>
-      Filters
+      
+      <Filters />
     </main>
   )
 }
