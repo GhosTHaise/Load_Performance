@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import React from 'react'
+import { Input } from '../ui/input'
 
 const SearchForm = () => {
   return (
@@ -7,10 +7,16 @@ const SearchForm = () => {
         <label>
             <Image
                 src="/magnifying-glass.svg"
-                alt='search'
+                alt='search icon'
                 className='absolute  left-8'
                 width={32}
                 height={32}
+            />
+            <Input
+                type='text'
+                placeholder='Search'
+                className='base-regular h-fit border-0 bg-black-400 
+                py-6 pl-20 pr-8 text-white-800 !ring-0 !ring-offset-0'
             />
         </label>
     </form>
