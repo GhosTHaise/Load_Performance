@@ -2,7 +2,7 @@ const schema = {
   name : "resource",
   title : "Resource",
   type : "document",
-  field : [
+  fields : [
     {
       name : "title",
       title : "Title",
@@ -19,7 +19,7 @@ const schema = {
     {
       name : "downloadLink",
       title : "Download Link",
-      typr : "url",
+      type : "url",
       validation : (Rule : any) => Rule.required()
     },
     {
