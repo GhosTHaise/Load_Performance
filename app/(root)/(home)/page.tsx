@@ -1,8 +1,23 @@
 import SearchForm from "@/components/form/SearchForm"
 import Filters from "@/components/shared/Filters"
 import { Button } from "@/components/ui/button"
+import { getResources } from "@/sanity/action"
 
-export default function Home() {
+export default async function Home() {
+
+  try {
+    const resources = await getResources({
+      query : "",
+      category : "",
+      page : "1"
+    });
+  
+    console.log("s",resources);
+  } catch (error) {
+    console.log(error);
+  }
+  
+
   return (
     <main
       className="flex-center paddings mx-auto w-full max-w-screen-2xl flex-col"
