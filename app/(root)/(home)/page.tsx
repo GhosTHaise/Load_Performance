@@ -1,3 +1,4 @@
+import ResourceCard from "@/components/card/ResourceCard";
 import SearchForm from "@/components/form/SearchForm"
 import Filters from "@/components/shared/Filters"
 import { Button } from "@/components/ui/button"
@@ -5,18 +6,11 @@ import { getResources } from "@/sanity/action"
 
 export default async function Home() {
 
-  try {
     const resources = await getResources({
       query : "",
       category : "",
       page : "1"
     });
-  
-    console.log("s",resources);
-  } catch (error) {
-    console.log(error);
-  }
-  
 
   return (
     <main
@@ -39,6 +33,37 @@ export default async function Home() {
       </section>
       
       <Filters />
+      <section
+        className="flex-center  mt-6 w-full flex-col sm:mt-20"
+      >
+        Header
+        <div
+          className="mt-12 flex w-full flex-wrap justify-center gap-16 sm:justify-start"
+        >
+          {
+            resources?.length > 0 ? (
+              resources.map((resource : any) =>(
+                <ResourceCard 
+                  key={resource._id}
+                  title={resource.title}
+                  id={resource._id}
+                  image={resource.image}
+                  downloadNumber={resource.views}
+                  slug={resource.slug}
+                />
+              ))
+            )
+            :
+            (
+              <p
+                className="body-regular  text-white-400"
+              >
+                No resources found
+              </p>
+            )
+          }
+        </div>
+      </section>
     </main>
   )
 }

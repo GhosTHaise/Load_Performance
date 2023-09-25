@@ -1,4 +1,4 @@
-import resource from "./ressource.schema";
+import resource from "./resource.schema";
 import resourcePlayslit from "./resource-plyslist.schema";
 
 const schemas = [
