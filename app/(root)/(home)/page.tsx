@@ -1,8 +1,9 @@
 import ResourceCard from "@/components/card/ResourceCard";
 import SearchForm from "@/components/form/SearchForm"
 import Filters from "@/components/shared/Filters"
-import { Button } from "@/components/ui/button"
 import { getResources } from "@/sanity/action"
+
+export const revalidate = 900;
 
 export default async function Home() {
 
