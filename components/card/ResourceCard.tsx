@@ -1,8 +1,6 @@
 import {
     Card,
     CardContent,
-    CardDescription,
-    CardFooter,
     CardHeader,
     CardTitle,
 } from "@/components/ui/card"
@@ -14,14 +12,12 @@ interface Props {
     id : string;
     image : string;
     downloadNumber : number;
-    slug : string;
 }
 const ResourceCard = ({
     title,
     id,
     image,
-    downloadNumber,
-    slug
+    downloadNumber
 } : Props) => {
   return (
     <Card
@@ -30,26 +26,55 @@ const ResourceCard = ({
         <Link
             href={`/resource/${id}`}
         >
-            <CardHeader>
-                <div>
+            <CardHeader
+                className="flex-center  flex-col  gap-2.5 !p-0"
+            >
+                <div 
+                    className="h-fit w-full"
+                >
                     <Image
                         src={image}
                         className="h-full rounded-md bg-cover"
                         alt={title}
-                        width={284}
+                        width={384}
                         height={440}
                     />
                 </div>
-                <CardTitle>Card Title</CardTitle>
-                <CardDescription>Card Description</CardDescription>
+                <CardTitle
+                    className="text-white paragraph-semibold line-clamp-1 w-full text-left"
+                >
+                    {title}
+                </CardTitle>
             </CardHeader>
         </Link>
-            <CardContent>
-                <p>Card Content</p>
-            </CardContent>
-            <CardFooter>
-                <p>Card Footer</p>
-            </CardFooter>
+        <CardContent
+            className="flex-between mt-4 p-0"
+        >
+            <div
+                className="flex-center body-medium gap-1.5 text-white"
+            >
+                <Image 
+                    src="/downloads.svg"
+                    width={20}
+                    height={20}
+                    alt="download"
+                />
+                {/** verify if undefined => `${downloadNumber}` */}
+                {downloadNumber}
+            </div>
+            <Link
+                href={`/resource/${id}`}
+                className="flex-center  text-gradient_purple-blue body-semibold gap-1.5"
+            >
+                Download Now
+                <Image
+                    src={"/arrow-blue.svg"}
+                    alt="arrow"
+                    width={13}
+                    height={10}
+                />
+            </Link>
+        </CardContent>
     </Card>
 
   )

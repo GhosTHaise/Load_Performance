@@ -49,7 +49,6 @@ export default async function Home() {
                   id={resource._id}
                   image={resource.image}
                   downloadNumber={resource.views}
-                  slug={resource.slug}
                 />
               ))
             )
