@@ -39,7 +39,7 @@ export function formUrlQuery({params, key , value} : UrlQueryParams){
     currentUrl[key] = value;
     //console.log(currentUrl,key,value,params);
 
-    return qs.stringify({
+    return qs.stringifyUrl({
         url : window.location.pathname,
         query : currentUrl
     },

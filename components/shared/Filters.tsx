@@ -11,17 +11,30 @@ const links = [
 ]
 const Filters = () => {
     const searchParams = useSearchParams();
+    const router  = useRouter();
     const [active, setActive] = useState("");
+    let newUrl = "";
 
     const handleFilter = (link : string) => {
-        let newUrl = formUrlQuery({
-            params : searchParams.toString(),
-            key : "category",
-            value : active
-        });
-        
-        setActive(link);
+        if(active === link){
+            setActive('');
 
+            newUrl = formUrlQuery({
+                params : searchParams.toString(),
+                key : "category",
+                value : null
+            });
+        }else{
+            setActive(link);
+
+            newUrl = formUrlQuery({
+                params : searchParams.toString(),
+                key : "category",
+                value : link.toLowerCase()
+            });
+        }
+
+        router.push(newUrl,{scroll : false})
     }
   return (
     <ul
