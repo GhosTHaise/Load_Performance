@@ -12,6 +12,12 @@ export const getResources = async (params : GetResourcesParams) => {
     const {query ,category, page} = params ;
 
     try {
+        console.log(buildQuery({
+            type:"resource",
+            query,
+            category,
+            page : parseInt(page)
+        }));
         
         const resources = await readclient.fetch(
             groq`${buildQuery({

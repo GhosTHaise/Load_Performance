@@ -16,7 +16,7 @@ export default async function Home({ searchParams } : Props) {
 
     const resources = await getResources({
       query : "",
-      category : "",
+      category : searchParams?.category || "",
       page : "1"
     });
 
