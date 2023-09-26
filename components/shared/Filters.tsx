@@ -1,5 +1,7 @@
 "use client"
-import React, { useState } from 'react'
+import { formUrlQuery } from '@/sanity/utils';
+import React, { useState } from 'react';
+import { useRouter,useSearchParams } from 'next/navigation';
 const links = [
     "all",
     "next 13",
@@ -8,10 +10,18 @@ const links = [
     "fullstack"
 ]
 const Filters = () => {
+    const searchParams = useSearchParams();
     const [active, setActive] = useState("");
 
     const handleFilter = (link : string) => {
+        let newUrl = formUrlQuery({
+            params : searchParams.toString(),
+            key : "category",
+            value : active
+        });
+        
         setActive(link);
+
     }
   return (
     <ul

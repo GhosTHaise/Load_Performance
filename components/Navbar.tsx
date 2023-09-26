@@ -4,9 +4,9 @@ import Link from 'next/link'
 const Navbar = () => {
   return (
     <nav
-    //bg-black-100
+    //bg-black-100 | backdrop-blur-md
       className='flex-center fixed top-0 z-50 w-full border-b-2
-       border-black-200 py-7 backdrop-blur-md text-white'
+       border-black-200 py-7 bg-black-100  text-white'
     >
       <div
         className='flex-between mx-auto w-full max-w-screen-2xl px-6 xs:px-8 sm:px-16'

@@ -6,7 +6,13 @@ import { getResources } from "@/sanity/action"
 
 export const revalidate = 900;
 
-export default async function Home() {
+interface Props {
+  searchParams :{[ key : string ] : string | undefined}
+}
+
+export default async function Home({ searchParams } : Props) {
+
+    console.log(searchParams);
 
     const resources = await getResources({
       query : "",
