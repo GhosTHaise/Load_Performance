@@ -2,7 +2,7 @@ import Header from "@/components/Header";
 import ResourceCard from "@/components/card/ResourceCard";
 import SearchForm from "@/components/form/SearchForm"
 import Filters from "@/components/shared/Filters"
-import { getResources } from "@/sanity/action"
+import { getResources, getResourcesPlaylist } from "@/sanity/action"
 
 export const revalidate = 900;
 
@@ -20,6 +20,10 @@ export default async function Home({ searchParams } : Props) {
       page : "1"
     });
 
+    const resourcesPlaylist = await getResourcesPlaylist();
+
+    console.log(resourcesPlaylist);
+    
   return (
     <main
       className="flex-center paddings mx-auto w-full max-w-screen-2xl flex-col"
