@@ -8,7 +8,11 @@ export const metadata: Metadata = {
   other : {
     "theme-color" : "#0d1117",
     "color-scheme" : "dark-only",
-    "twitter:image" : "https://i.ibb.co/d6TXxB2/homepage-thumbnail.jpg"
+    "twitter:image" : "https://i.ibb.co/d6TXxB2/homepage-thumbnail.jpg",
+    "twitter:card" : "summary_large_image",
+    "og:url" : "jsmastery.pro",
+    "og:image" : "https://i.ibb.co/d6TXxB2/homepage-thumbnail.jpg",
+    "og:type" : "website"
   }
 }
 
