@@ -27,7 +27,7 @@ yarn-error.log*
 # local env files
 .env*.local
 .env
-sanity/env.ts
+#sanity/env.ts
 # vercel
 .vercel
 
